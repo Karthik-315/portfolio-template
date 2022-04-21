@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", "Roboto", sans-serif;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: #0d121a;
+    color: rgb(215, 215, 215);
+    transition: all 0.4s;
+}
+
+.button {
+    font-family: "Nunito", "Roboto", sans-serif;
+    border: 0;
+    outline: 0;
+    background: none;
+    color: rgb(215, 215, 215);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}

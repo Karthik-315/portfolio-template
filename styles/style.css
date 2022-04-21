@@ -1,0 +1,7 @@
+:root {
+    /* 
+    --username-char-count -> Holds the number of characters in username (for intro animaiton). Set by Javascript.
+     */
+    --username-char-count: 0;
+    --skillcards-count: 2;
+}

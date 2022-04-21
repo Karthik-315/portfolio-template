@@ -1,0 +1,11 @@
+/* Intro animation */
+$typeSpeed: 1s;
+$startDelay: 0.5s;
+$numberOfCharacters: var(--username-char-count);
+
+/* skill icons */
+$number-of-cards: 8;
+$angle-of-separation: 360 / $number-of-cards;
+$outer-circle-size: 28rem;
+$card-size: 6.5rem;
+$rotation-vector: 0;

@@ -1,0 +1,1000 @@
+@import "./mixins";
+@import "./variables";
+@import "./commonStyles";
+@import "./scrollbar";
+
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+    grid-column: 1/3;
+    position: relative;
+    @include useFlex($justifyDir: space-between);
+    background: #0d121a;
+    max-width: 100%;
+    padding: 1rem 2rem;
+    z-index: 5;
+}
+
+.header__title {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.hamburger {
+    display: block;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    width: 3rem;
+    height: 3px;
+    background: rgb(215, 215, 215);
+    transition: transform 0.3s ease-in-out, opacity 0.7s ease-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    bottom: 8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+.menu-active .hamburger {
+    transform: rotate(45deg);
+}
+
+.menu-active .hamburger::before {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.menu-active .hamburger::after {
+    transform: rotate(90deg) translate(-8px);
+}
+
+.header__nav {
+    justify-self: flex-end;
+    position: absolute;
+    top: 6rem;
+    right: 0rem;
+    left: 0rem;
+    background: #0d121a;
+    padding: 1rem 0;
+    border-radius: 0.2rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.header__nav.menu-active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: all;
+}
+
+.nav__list {
+    @include useFlex($justifyDir: space-between);
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+}
+
+.list-item {
+    flex: 1 0 auto;
+    @include useFlex();
+    list-style: none;
+    margin: 0 1.25rem;
+}
+
+.list-item--contact {
+    position: relative;
+    overflow: hidden;
+}
+
+.link,
+.aside-link,
+.contact-link {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgb(215, 215, 215);
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.4s ease-in-out;
+}
+
+.link:visited,
+.aside-link:visited,
+.contact-link:visited {
+    color: rgb(215, 215, 215);
+}
+
+.link:hover,
+.aside-link:hover,
+.contact-link:hover {
+    color: #52ffa8;
+}
+
+.link--contact-me {
+    font-weight: 600;
+    padding: 0.75rem 0.5rem;
+    color: rgb(215, 215, 215);
+    border-radius: 0.2rem;
+    transition: color 0.6s ease-in-out;
+}
+
+.link--contact-me:visited {
+    color: rgb(215, 215, 215);
+}
+
+.link--contact-me:hover {
+    color: #0d121a;
+}
+
+.contact-bg {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    left: -100%;
+    background: #52ffa8;
+    pointer-events: none;
+    border-radius: 0.2rem;
+    transform: skewX(25deg) translateX(-100%);
+    z-index: -1;
+    transition: transform 0.6s ease-in-out;
+}
+
+.link--contact-me:hover ~ .contact-bg {
+    transform: none;
+}
+
+/* END of Header */
+
+.container {
+    @include useFlex($dir: column);
+}
+
+/* Side nav */
+.aside {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    width: 100vw;
+    background: #1c2534;
+    transform: translateY(-100%);
+    z-index: 10;
+}
+
+.aside-nav__list {
+    @include useFlex($justifyDir: space-around);
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.aside-list-item {
+    list-style: none;
+    @include useFlex();
+}
+
+.aside-icon {
+    font-size: 2rem;
+}
+
+.active-link {
+    color: #52ffa8;
+}
+
+.active-link:visited {
+    color: #52ffa8;
+}
+
+/* Main layout */
+.main {
+    width: 100%;
+    transition: margin 0.4s ease-in-out;
+}
+
+.main.menu-active {
+    margin-top: 3.5rem;
+}
+
+.main__intro-animation {
+    @include useFlex();
+    height: 100vh;
+    overflow: hidden;
+}
+
+.user-intro {
+    @include useFlex($dir: column);
+    width: 100%;
+}
+
+.intro-greeting-text,
+.intro-welcome-text {
+    font-size: 1.75rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+    opacity: 0;
+}
+
+.intro-greeting-text {
+    transform: translateY(-20rem);
+    animation: introGreetingText 1s ease-in-out forwards;
+}
+
+.intro-welcome-text {
+    transform: translateY(20rem);
+    animation: introWelcomeText 0.5s ease-in-out 1.5s forwards;
+}
+
+.intro-greeting-text > span,
+.intro-welcome-text > span {
+    font-weight: 500;
+    color: #52ffa8;
+}
+
+@keyframes introGreetingText {
+    to {
+        opacity: 1;
+        transform: translateY(3rem);
+    }
+}
+
+@keyframes introWelcomeText {
+    to {
+        opacity: 1;
+        transform: translateY(-3rem) rotateZ(0deg);
+    }
+}
+
+.intro-username-container {
+    @include useFlex();
+    width: 100%;
+    margin: 5rem 0;
+}
+
+.full-name {
+    position: relative;
+    font-family: "Source Code Pro", monospace;
+    font-size: 4rem;
+    font-weight: 400;
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.full-name::before,
+.full-name::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.full-name::before {
+    background: #0d121a;
+    animation: fullName $typeSpeed steps($numberOfCharacters) $startDelay forwards;
+}
+
+.full-name::after {
+    width: 0.2rem;
+    background: #52ffa8;
+    animation: fullName $typeSpeed steps($numberOfCharacters) $startDelay forwards,
+        cursor 0.5s steps(8) infinite;
+}
+
+@keyframes fullName {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes cursor {
+    to {
+        background: transparent;
+    }
+}
+
+.main__hero-section {
+    @include useFlex($dir: column, $justifyDir: space-between, $alignDir: flex-start);
+    margin-top: 1rem;
+    padding: 3rem 2rem;
+    opacity: 0;
+    transform: translateY(-20%);
+    transition: opacity 0.4s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.activate-element {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+}
+
+.hide-element {
+    opacity: 0 !important;
+}
+
+.hero__image {
+    position: relative;
+    @include useFlex();
+    width: 100%;
+    padding: 1rem;
+    // background: #0f1622;
+}
+
+.image__bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // clip-path: polygon(40% 0, 4px 4px, 0 90%, 0 0);
+    // clip-path: polygon(60% 100%, calc(100% - 4px) calc(100% - 4px), 100% 10%, 100% 100%);
+    background: #0f1622;
+    clip-path: polygon(0 0, 100% 100%, 0 100%, 0 0);
+    z-index: 0;
+}
+
+.portfolio-hero-image {
+    height: 30rem;
+    width: 100%;
+    width: auto;
+    object-fit: contain;
+    opacity: 0;
+    transform: translateY(-5%);
+    transition: transform 0.7s ease-in-out, opacity 0.7s ease-in-out;
+    z-index: 1;
+}
+
+.hero__intro {
+    width: 100%;
+    margin-top: 3rem;
+    padding: 1rem;
+}
+
+.intro__title,
+.title__text {
+    margin: 0.5rem auto;
+    font-size: 1.75rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.title__first-name,
+.title__middle-name,
+.title__last-name {
+    display: inline-block;
+    font-size: 2.25rem;
+    color: #52ffa8;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.title__first-name {
+    margin-left: 0.3rem;
+}
+
+.title__first-name::first-letter,
+.title__middle-name::first-letter,
+.title__last-name::first-letter {
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.intro__designation {
+    margin: 0.75rem auto;
+    color: #fff;
+    margin-top: 2rem;
+    font-size: 2.25rem;
+    font-weight: 200;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.intro__text {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-top: 2rem;
+    line-height: 1.8rem;
+    text-align: justify;
+}
+
+.intro__buttons {
+    @include useFlex();
+    margin-top: 4rem;
+}
+
+.link--know-more,
+.link--hire-me {
+    position: relative;
+    max-height: 4.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    flex: 1;
+    margin: 0 1rem;
+    padding: 1rem;
+    border: 0.1rem solid #52ffa8;
+    border-radius: 0.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    overflow-y: hidden;
+}
+
+.link--know-more {
+    @include useFlex();
+}
+
+.link--know-more:hover {
+    color: rgb(215, 215, 215);
+}
+
+.know-more-icon {
+    opacity: 0;
+    transform: translateY(-400%);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.fa-angles-down {
+    margin-left: 0.75rem;
+    color: rgb(215, 215, 215);
+}
+
+.link--know-more:hover .know-more-icon {
+    opacity: 1;
+    transform: none;
+}
+
+.link--hire-me {
+    background: #52ffa8;
+    color: #0d121a;
+    transition: color 0.3s ease-in-out;
+}
+
+.link--hire-me:visited {
+    color: #0d121a;
+}
+
+.button-overlay {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    left: 1px;
+    bottom: 1px;
+    background: #0d121a;
+    opacity: 0;
+    transform: translateY(-300%);
+    z-index: -1;
+    pointer-events: none;
+    transition: opacity 0.2s, transform 0.3s ease-in-out;
+}
+
+.button-text {
+    position: relative;
+    z-index: 1;
+}
+
+.link--hire-me:hover {
+    color: #52ffa8;
+}
+
+.link--hire-me:hover .button-overlay {
+    opacity: 1;
+    transform: translateY(0);
+    z-index: 1;
+    pointer-events: all;
+}
+
+.main__skills,
+.main__projects,
+.main__work-experience,
+.main__contact-me {
+    @include useFlex($dir: column);
+    margin-top: 3rem;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(10%);
+    transition: opacity 0.4s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.title__text {
+    font-size: 3rem;
+    font-weight: 200;
+    letter-spacing: 0.4rem;
+    text-transform: uppercase;
+    margin: 1rem auto 4rem auto;
+}
+
+.title__brief {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: auto;
+    padding: 0.5rem;
+    line-height: 1.75rem;
+    text-align: justify;
+}
+
+/* Circular skills styling */
+.skills__container {
+    position: relative;
+    margin-top: 8rem;
+    border-radius: 50%;
+    height: $outer-circle-size;
+    width: $outer-circle-size;
+    border: 1rem double #52ffa974;
+    transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.skills__container:hover {
+    border: 1rem double #52ffa8;
+    box-shadow: inset 0 0 0.75rem #52ffa8;
+}
+
+.skill-card,
+.project-card {
+    @include useFlex($dir: column);
+    background: #1c2534;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out;
+}
+
+.skill-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: $card-size;
+    width: $card-size;
+    margin: -($card-size/2);
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(0, 0);
+    transition: opacity 0.5s ease-in-out, transform 0.7s ease-in-out, box-shadow 0.3s ease;
+    transition: all 0.4s;
+}
+
+.skill-card:hover {
+    box-shadow: 0 0 0.5rem 0.2rem #52ffa8;
+}
+
+@for $card from 1 through $number-of-cards {
+    .skill-card:nth-child(#{$card}).display-skillcard {
+        opacity: 1;
+        transform: rotate($rotation-vector * 1deg)
+            translate($outer-circle-size/2)
+            rotate($rotation-vector * -1deg);
+    }
+    $rotation-vector: $rotation-vector + $angle-of-separation;
+}
+
+.skill-icon-container {
+    @include useFlex($dir: column);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.skill-icon {
+    height: 4rem;
+    width: auto;
+    pointer-events: none;
+}
+
+.skill-title,
+.project-title {
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.skill-title {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    left: 10%;
+    font-size: 2.75rem;
+    font-weight: 300;
+    opacity: 0;
+    word-wrap: break-word;
+    transform: translateY(-50%) scale(0.1);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.skill-title.display-skilltext {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+.projects__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    justify-items: center;
+    align-items: center;
+    margin: 5rem auto;
+}
+
+.project-card {
+    min-height: 25rem;
+    padding: 0rem;
+}
+
+.project-image-container {
+    position: relative;
+    @include useFlex();
+    width: 100%;
+    height: 12rem;
+}
+
+.project-link {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    @include useFlex();
+    height: 2rem;
+    width: 2rem;
+    background: rgb(215, 215, 215);
+    color: #0d121a;
+    padding: 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0 0 0.2rem 0.2rem rgb(149, 149, 149);
+}
+
+.project-link:visited {
+    color: #0d121a;
+}
+
+.project-link:hover {
+    background: #0d121a;
+    color: #52ffa8;
+}
+
+.project-link--app {
+    left: 4rem;
+}
+
+.project-link-icon {
+    font-size: 1.25rem;
+}
+
+.project-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.project-card-separator,
+.work-card-separator {
+    width: 100%;
+    margin: 1rem;
+    border-bottom: 1px solid rgba(181, 181, 181, 0.25);
+}
+
+.project-card-separator {
+    margin-bottom: 0;
+}
+
+.project-info {
+    padding: 0.5rem;
+    padding-top: 0;
+}
+
+.project-title {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+}
+
+.project-title::first-letter {
+    font-size: 2.25rem;
+}
+
+.project-details {
+    line-height: 1.75rem;
+    text-align: center;
+}
+
+.main__work-experience {
+    margin-bottom: 5rem;
+}
+
+.work__tabs {
+    @include useFlex($justifyDir: space-between);
+    margin-top: 2rem;
+    padding: 0 0.2rem;
+    background: #1c2534;
+    overflow-x: auto;
+}
+
+.work__tabs,
+.work__details {
+    border-radius: 0.3rem;
+    width: 100%;
+}
+
+.tab {
+    flex: 1;
+    @include useFlex();
+    min-width: 45%;
+    margin: 0 0.1rem;
+    padding: 1rem;
+    border-right: 1px solid rgba(215, 215, 215, 0.25);
+    border-top-left-radius: 0.2rem;
+    border-top-right-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.tab--active {
+    border: 0.15rem solid #52ffa84d;
+    background: #0d121a;
+    border-bottom: 0;
+}
+
+.company-title {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.tab--active .company-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.tab:first-child {
+    margin-left: 0;
+}
+
+.tab:last-child {
+    margin-right: 0;
+    border-right: 0;
+}
+
+.work__details {
+    margin-top: 0.25rem;
+    padding: 1rem;
+    background: #1c2534;
+}
+
+.company--position {
+    font-size: 1.75rem;
+    font-weight: 300;
+    margin-bottom: 0;
+}
+
+.company--duration {
+    font-size: 1.25rem;
+    margin-top: 0.25rem;
+    color: rgba(215, 215, 215, 0.5);
+}
+
+.work-card-separator {
+    margin: 0;
+}
+
+.work-responsibilities {
+    margin: 2rem;
+    padding: 0;
+    list-style-type: "♦";
+}
+
+.work-list-item {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    padding-left: 1rem;
+    line-height: 2rem;
+}
+
+.work-list-item::marker {
+    color: #52ffa8;
+}
+
+.main__contact-me {
+    padding: 2rem 1rem;
+    background: #1c2534;
+}
+
+.contact-title__text {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #52ffa8;
+    margin: 5rem;
+    margin-top: 0.5rem;
+}
+
+.contact-details {
+    @include useFlex($justifyDir: space-around);
+    width: 100%;
+}
+
+.contact-link {
+    font-size: 2rem;
+}
+
+/* Responsive Styling */
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+
+    .header {
+        padding: 0.25rem 2rem;
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__nav {
+        position: static;
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: all;
+    }
+
+    .nav__list {
+        @include useFlex($justifyDir: space-between);
+    }
+
+    .list-item {
+        list-style: none;
+        margin: 0 1rem;
+    }
+
+    .container {
+        @include useFlex();
+    }
+
+    .aside {
+        position: sticky;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 5rem;
+        transform: translateX(-100%);
+        align-self: flex-start;
+    }
+
+    .aside-nav__list {
+        @include useFlex($dir: column, $justifyDir: space-around);
+    }
+
+    .main {
+        margin-top: 0;
+    }
+
+    .main__hero-section {
+        @include useFlex($justifyDir: space-between);
+    }
+
+    .hero__image {
+        width: 50%;
+    }
+
+    .hero__intro {
+        align-self: flex-start;
+        margin-left: 3rem;
+        margin-top: 0;
+    }
+
+    .intro__title {
+        text-align: left;
+    }
+
+    .intro__designation {
+        text-align: left;
+    }
+
+    .intro__buttons {
+        margin-top: 6rem;
+    }
+
+    .button--know-more,
+    .link--hire-me {
+        margin: 0 5rem;
+    }
+
+    .main__skills,
+    .main__projects,
+    .main__work-experience {
+        padding: 2rem 5rem;
+    }
+
+    .skill-card {
+        padding: 1.5rem;
+    }
+
+    .projects__container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+    }
+
+    .project-card {
+        padding: 0;
+    }
+
+    .project-info {
+        padding: 1rem;
+    }
+
+    .work__tabs,
+    .work__details {
+        border-radius: 0.3rem;
+        width: 90%;
+    }
+
+    .work__tabs::-webkit-scrollbar {
+        height: 7px;
+    }
+
+    .work__tabs::-webkit-scrollbar-track {
+        background: #0d121a;
+    }
+
+    .work__tabs::-webkit-scrollbar-thumb {
+        background: #1c2534;
+        transition: box-shadow 2s ease-in-out;
+        border-radius: 0.2rem;
+    }
+
+    .tab {
+        min-width: 30%;
+    }
+
+    .company--duration {
+        margin-top: 0.75rem;
+    }
+
+    .work-responsibilities {
+        margin: 3rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    html {
+        font-size: 8px;
+    }
+
+    .intro__buttons {
+        @include useFlex($dir: column);
+        margin-top: 4rem;
+    }
+
+    .link--know-more,
+    .link--hire-me {
+        width: 80%;
+    }
+
+    .link--hire-me {
+        margin-top: 3rem;
+    }
+}

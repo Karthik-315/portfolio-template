@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/fontawesome.min.css" />
+        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/mainContent.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200;400&display=swap"
+            rel="stylesheet"
+        />
+        <title>Portfolio Template</title>
+        <script defer src="scripts/app.js"></script>
+    </head>
+
+    <body class="body">
+        <header class="header">
+            <section class="header__title-container">
+                <!-- Your brand / company here. Leave blank if NA -->
+                <h2 class="header__title">BRAND NAME</h2>
+            </section>
+
+            <section class="header__menu">
+                <button class="button menu-button">
+                    <span class="hamburger"></span>
+                </button>
+            </section>
+
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="list-item">
+                        <a href="#" class="link link--home">Home</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#main__skills" class="link link--skills">Skills</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#main__projects" class="link link--projects"
+                            >My Projects</a
+                        >
+                    </li>
+                    <li class="list-item">
+                        <a href="#main__work-experience" class="link link--work-exp"
+                            >Work Experience</a
+                        >
+                    </li>
+                    <li class="list-item list-item--contact">
+                        <a href="#main__contact-me" class="link link--contact-me"
+                            >Contact Me</a
+                        >
+                        <span class="contact-bg"></span>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="container">
+            <aside class="aside">
+                <ul class="aside-nav__list">
+                    <li class="aside-list-item">
+                        <a href="#" class="aside-link aside-link--home">
+                            <i class="fa-solid fa-house-chimney aside-icon"></i>
+                        </a>
+                    </li>
+                    <li class="aside-list-item">
+                        <a href="#main__skills" class="aside-link aside-link--skills">
+                            <i class="fa-solid fa-code aside-icon"></i>
+                        </a>
+                    </li>
+                    <li class="aside-list-item">
+                        <a href="#main__projects" class="aside-link aside-link--projects">
+                            <i class="fa-solid fa-puzzle-piece aside-icon"></i>
+                        </a>
+                    </li>
+                    <li class="aside-list-item">
+                        <a
+                            href="#main__work-experience"
+                            class="aside-link aside-link--work-exp"
+                        >
+                            <i class="fa-solid fa-briefcase aside-icon"></i>
+                        </a>
+                    </li>
+                    <li class="aside-list-item">
+                        <a
+                            href="#main__contact-me"
+                            class="aside-link aside-link--contact-me"
+                        >
+                            <i class="fa-solid fa-phone aside-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </aside>
+
+            <main class="main">
+                <section class="main__intro-animation section">
+                    <article class="user-intro">
+                        <h3 class="intro-greeting-text">
+                            <span>Hello World!</span> I am
+                        </h3>
+                        <div class="intro-username-container">
+                            <!-- Replace with your full name -->
+                            <h2 class="full-name">John Doe</h2>
+                        </div>
+                        <h3 class="intro-welcome-text">
+                            Welcome To My <span>Page!</span>
+                        </h3>
+                    </article>
+
+                    <article class="separator"></article>
+                </section>
+
+                <section class="main__hero-section section">
+                    <article class="hero__image">
+                        <!-- 
+                            Replace the src attribute with the image of your choice, and the alt attribute with your name.
+                            For best results, use an potrait image with no background, and one that's centered.
+                         -->
+                        <img
+                            src="./images/template-sample-profile-image-3.png"
+                            alt="John Doe"
+                            class="portfolio-hero-image"
+                        />
+
+                        <div class="image__bg"></div>
+                    </article>
+
+                    <article class="hero__intro">
+                        <h2 class="intro__title">
+                            I am
+                            <!-- Your name here -->
+                            <span class="title__name">
+                                <!-- First name here -->
+                                <span class="title__first-name">John</span>
+                                <!-- Middle name here -->
+                                <span class="title__middle-name"></span>
+                                <!-- Last name here -->
+                                <span class="title__last-name">Doe</span>
+                            </span>
+                        </h2>
+
+                        <!-- 
+                        Your designation here (eg. WEB dev, Software Architect).
+                     -->
+                        <h3 class="intro__designation">Frontend Web Developer</h3>
+
+                        <!-- Short intro about you. For best results, keep it less than 40 words. -->
+                        <p class="intro__text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Laboriosam fuga quia dolorem necessitatibus praesentium ex
+                            cumque quidem hic expedita sapiente vel officiis nisi
+                            consequatur debitis, reprehenderit labore eveniet qui delectus
+                            in nulla quisquam nam autem modi! Aperiam voluptas corrupti
+                            corporis.
+                        </p>
+
+                        <div class="intro__buttons">
+                            <a href="#main__skills" class="link link--know-more">
+                                Know More
+                                <span class="know-more-icon">
+                                    <i class="fa-solid fa-angles-down"></i>
+                                </span>
+                            </a>
+                            <a href="#main__contact-me" class="link link--hire-me">
+                                <span class="button-overlay"></span>
+                                <span class="button-text">Let's Connect</span>
+                            </a>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="main__skills section" id="main__skills">
+                    <article class="skills__title">
+                        <h3 class="title__text">Skills & Tech</h3>
+                        <p class="title__brief">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Labore recusandae voluptates quas id, magni iste soluta a
+                            blanditiis perspiciatis architecto.
+                        </p>
+                    </article>
+
+                    <article class="skills__container">
+                        <!-- 
+                            To add more:
+                            1. Copy/paste the skill-card div and edit the content to your own needs.
+                            2. The name of the skill to be displaed on hover, must be the second class name
+                               of the "skill-card" div, in the format: skill-card--skill_name.
+                               For skills with multiple words, use underscore.
+
+                               Eg:
+                                <div class="skill-card skill-card--some_random_skill">
+                                </div>
+
+                            3. Update the total number of skill-card divs in the number-of-cards variable 
+                               in the _variables.scss file.
+
+                            NOTE: After editing make sure to set the number of divs to the number-of-cards variable,
+                                  to make it work correctly.
+                         -->
+                        <div class="skill-card skill-card--html">
+                            <div class="skill-icon-container">
+                                <img
+                                    src="./images/tech-icons/html.png"
+                                    alt="HTML"
+                                    class="skill-icon"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="skill-card skill-card--css">
+                            <div class="skill-icon-container">
+                                <img
+                                    src="./images/tech-icons/css.png"
+                                    alt="CSS"
+                                    class="skill-icon"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="skill-card skill-card--sass">
+                            <div class="skill-icon-container">
+                                <img
+                                    src="./images/tech-icons/sass.png"
+                                    alt="Sass"
+                                    class="skill-icon"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="skill-card skill-card--javascript">
+                            <div class="skill-icon-container">
+                                <img
+                                    src="./images/tech-icons/js.png"
+                                    alt="Javascript"
+                                    class="skill-icon"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="skill-card skill-card--react">
+                            <div class="skill-icon-container">
+                                <img
+                                    src="./images/tech-icons/react.png"
+                                    alt="React"
+                                    class="skill-icon"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="skill-card skill-card--figma">
+                            <div class="skill-icon-container">
+                                <img
+                                    src="./images/tech-icons/figma.png"
+                                    alt="figma"
+                                    class="skill-icon"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="skill-card skill-card--git">
+                            <div class="skill-icon-container">
+                                <img
+                                    src="./images/tech-icons/git.png"
+                                    alt="git"
+                                    class="skill-icon"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="skill-card skill-card--github">
+                            <div class="skill-icon-container">
+                                <img
+                                    src="./images/tech-icons/github.png"
+                                    alt="github"
+                                    class="skill-icon"
+                                />
+                            </div>
+
+                            <div class="skill-card-separator"></div>
+                        </div>
+
+                        <!-- Leave this empty. JS takes care of this. -->
+                        <h3 class="skill-title"></h3>
+                    </article>
+                </section>
+
+                <section class="main__projects section" id="main__projects">
+                    <article class="projects__title">
+                        <h3 class="title__text">My Projects</h3>
+                        <p class="title__brief">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Deserunt dolores iusto accusamus. Reprehenderit eius, iusto,
+                            ipsa aspernatur illum labore modi incidunt officiis voluptatum
+                            ea nemo. Quo perferendis dolorem itaque illum consequatur
+                            fugiat, sequi dicta cum!
+                        </p>
+                    </article>
+
+                    <!-- To add more, replicate the project-card container and add in your details. -->
+                    <article class="projects__container">
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <a
+                                    href="#"
+                                    class="link project-link project-link--code"
+                                    target="_blank"
+                                >
+                                    <i class="fa-brands fa-github project-link-icon"></i>
+                                </a>
+                                <img
+                                    src="./images/projects/project-1.png"
+                                    alt="HTML"
+                                    class="project-image"
+                                />
+                                <a
+                                    href="#"
+                                    class="link project-link project-link--app"
+                                    target="_blank"
+                                >
+                                    <i class="fa-solid fa-link project-link-icon"></i>
+                                </a>
+                            </div>
+
+                            <div class="project-card-separator"></div>
+
+                            <div class="project-info">
+                                <h3 class="project-title">1. Project #1</h3>
+                                <p class="project-details">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                                    elit. Error deserunt harum libero mollitia facere
+                                    quisquam doloribus autem amet odit consectetur velit
+                                    magnam, possimus inventore porro.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <a
+                                    href="#"
+                                    class="link project-link project-link--code"
+                                    target="_blank"
+                                >
+                                    <i class="fa-brands fa-github project-link-icon"></i>
+                                </a>
+                                <img
+                                    src="./images/projects/project-2.png"
+                                    alt="HTML"
+                                    class="project-image"
+                                />
+                                <a
+                                    href="#"
+                                    class="link project-link project-link--app"
+                                    target="_blank"
+                                >
+                                    <i class="fa-solid fa-link project-link-icon"></i>
+                                </a>
+                            </div>
+
+                            <div class="project-card-separator"></div>
+
+                            <div class="project-info">
+                                <h3 class="project-title">2. Project #2</h3>
+
+                                <p class="project-details">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                                    elit. Error deserunt harum libero mollitia facere
+                                    quisquam doloribus autem amet odit consectetur velit
+                                    magnam, possimus inventore porro.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <a
+                                    href="#"
+                                    class="link project-link project-link--code"
+                                    target="_blank"
+                                >
+                                    <i class="fa-brands fa-github project-link-icon"></i>
+                                </a>
+                                <img
+                                    src="./images/projects/project-3.png"
+                                    alt="HTML"
+                                    class="project-image"
+                                />
+                                <a
+                                    href="#"
+                                    class="link project-link project-link--app"
+                                    target="_blank"
+                                >
+                                    <i class="fa-solid fa-link project-link-icon"></i>
+                                </a>
+                            </div>
+
+                            <div class="project-card-separator"></div>
+
+                            <div class="project-info">
+                                <h3 class="project-title">3. Project #3</h3>
+                                <p class="project-details">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                                    elit. Error deserunt harum libero mollitia facere
+                                    quisquam doloribus autem amet odit consectetur velit
+                                    magnam, possimus inventore porro.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="project-card">
+                            <div class="project-image-container">
+                                <a
+                                    href="#"
+                                    class="link project-link project-link--code"
+                                    target="_blank"
+                                >
+                                    <i class="fa-brands fa-github project-link-icon"></i>
+                                </a>
+                                <img
+                                    src="./images/projects/project-4.png"
+                                    alt="HTML"
+                                    class="project-image"
+                                />
+                                <a
+                                    href="#"
+                                    class="link project-link project-link--app"
+                                    target="_blank"
+                                >
+                                    <i class="fa-solid fa-link project-link-icon"></i>
+                                </a>
+                            </div>
+
+                            <div class="project-card-separator"></div>
+
+                            <div class="project-info">
+                                <h3 class="project-title">4. Project #4</h3>
+                                <p class="project-details">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                                    elit. Error deserunt harum libero mollitia facere
+                                    quisquam doloribus autem amet odit consectetur velit
+                                    magnam, possimus inventore porro.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="main__work-experience section" id="main__work-experience">
+                    <article class="work__title">
+                        <h3 class="title__text">Work Experience</h3>
+                        <p class="title__brief">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Labore recusandae voluptates quas id, magni iste soluta a
+                            blanditiis perspiciatis architecto.
+                        </p>
+                    </article>
+
+                    <article class="work__tabs">
+                        <!-- 
+                            To add a new company, follow the same format with the class name tab-organization--number.
+                            Add the class tab--active to the organization to be highlighted when the page loads (preferably, 
+                            the current org.)
+
+                            Format:
+                            <div class="tab tab-organization--number tab--active">
+                                <h3 class="company-title">Organization #number</h3>
+                            </div>
+                         -->
+                        <div class="tab tab-organization--6 tab--active">
+                            <h3 class="company-title">Organization #6</h3>
+                        </div>
+                        <div class="tab tab-organization--5">
+                            <h3 class="company-title">Organization #5</h3>
+                        </div>
+                        <div class="tab tab-organization--4">
+                            <h3 class="company-title">Organization #4</h3>
+                        </div>
+                        <div class="tab tab-organization--3">
+                            <h3 class="company-title">Organization #3</h3>
+                        </div>
+                        <div class="tab tab-organization--2">
+                            <h3 class="company-title">Organization #2</h3>
+                        </div>
+                        <div class="tab tab-organization--1">
+                            <h3 class="company-title">Organization #1</h3>
+                        </div>
+                    </article>
+
+                    <article class="work__details">
+                        <!-- 
+                            Follow the same process as above. No need of an active class (like tab--active).
+                            Make sure the number of tab-organization and details-organization remain the same.
+
+                            Note: details-organization--1 contains the work experience details of company in tab-organization--1
+                         -->
+                        <div class="details details-organization--6">
+                            <div>
+                                <h3 class="company--position">Senior Staff Engineer</h3>
+                                <p class="company--duration">Mar, 2022 - Present</p>
+                            </div>
+
+                            <div class="work-card-separator"></div>
+
+                            <ul class="work-responsibilities">
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit. Quisquam necessitatibus quos ad atque provident
+                                    a reprehenderit deserunt dolore placeat voluptas.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Sequi sit velit cumque. Sint delectus sunt ipsa
+                                    voluptatem quidem deleniti dicta quibusdam fugiat odit
+                                    tenetur vero quos molestiae nisi, eveniet voluptate.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="details details-organization--5 hidden">
+                            <div>
+                                <h3 class="company--position">Staff Engineer</h3>
+                                <p class="company--duration">Oct, 2020 - Dec, 2021</p>
+                            </div>
+
+                            <div class="work-card-separator"></div>
+
+                            <ul class="work-responsibilities">
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit. Quisquam necessitatibus quos ad atque provident
+                                    a reprehenderit deserunt dolore placeat voluptas.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Sequi sit velit cumque. Sint delectus sunt ipsa
+                                    voluptatem quidem deleniti dicta quibusdam fugiat odit
+                                    tenetur vero quos molestiae nisi, eveniet voluptate.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="details details-organization--4 hidden">
+                            <div>
+                                <h3 class="company--position">Tech Lead</h3>
+                                <p class="company--duration">Aug, 2018 - Oct, 2020</p>
+                            </div>
+
+                            <div class="work-card-separator"></div>
+
+                            <ul class="work-responsibilities">
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit. Quisquam necessitatibus quos ad atque provident
+                                    a reprehenderit deserunt dolore placeat voluptas.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Sequi sit velit cumque. Sint delectus sunt ipsa
+                                    voluptatem quidem deleniti dicta quibusdam fugiat odit
+                                    tenetur vero quos molestiae nisi, eveniet voluptate.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="details details-organization--3 hidden">
+                            <div>
+                                <h3 class="company--position">
+                                    Senior Software Engineer
+                                </h3>
+                                <p class="company--duration">Mar, 2015 - Mar, 2018</p>
+                            </div>
+
+                            <div class="work-card-separator"></div>
+
+                            <ul class="work-responsibilities">
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit. Quisquam necessitatibus quos ad atque provident
+                                    a reprehenderit deserunt dolore placeat voluptas.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Sequi sit velit cumque. Sint delectus sunt ipsa
+                                    voluptatem quidem deleniti dicta quibusdam fugiat odit
+                                    tenetur vero quos molestiae nisi, eveniet voluptate.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="details details-organization--2 hidden">
+                            <div>
+                                <h3 class="company--position">Software Engineer II</h3>
+                                <p class="company--duration">Jan, 2013 - Jan, 2015</p>
+                            </div>
+
+                            <div class="work-card-separator"></div>
+
+                            <ul class="work-responsibilities">
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit. Quisquam necessitatibus quos ad atque provident
+                                    a reprehenderit deserunt dolore placeat voluptas.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Sequi sit velit cumque. Sint delectus sunt ipsa
+                                    voluptatem quidem deleniti dicta quibusdam fugiat odit
+                                    tenetur vero quos molestiae nisi, eveniet voluptate.
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="details details-organization--1 hidden">
+                            <div>
+                                <h3 class="company--position">Software Engineer I</h3>
+                                <p class="company--duration">May, 2012 - Dec, 2013</p>
+                            </div>
+
+                            <div class="work-card-separator"></div>
+
+                            <ul class="work-responsibilities">
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit. Quisquam necessitatibus quos ad atque provident
+                                    a reprehenderit deserunt dolore placeat voluptas.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum dolor sit, amet consectetur adipisicing
+                                    elit.
+                                </li>
+
+                                <li class="work-list-item responsibility--1">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing
+                                    elit. Sequi sit velit cumque. Sint delectus sunt ipsa
+                                    voluptatem quidem deleniti dicta quibusdam fugiat odit
+                                    tenetur vero quos molestiae nisi, eveniet voluptate.
+                                </li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="main__contact-me section" id="main__contact-me">
+                    <article class="contact__title">
+                        <h3 class="title__text contact-title__text">Contact Me</h3>
+                    </article>
+
+                    <article class="contact-details">
+                        <!-- Your twitter profile link goes inside the href -->
+                        <a href="#" class="contact-link contact--twitter">
+                            <i class="fa-brands fa-twitter"></i>
+                        </a>
+
+                        <!-- Replace youremail@domain.com with your mail id  -->
+                        <a
+                            href="mailto:youremail@domain.com"
+                            class="contact-link contact--mail"
+                        >
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+
+                        <!-- Your github page -->
+                        <a href="#" class="contact-link contact--github">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <!-- Your linkedin page -->
+                        <a href="#" class="contact-link contact--linkedin">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                    </article>
+                </section>
+            </main>
+        </section>
+        <footer class="footer"></footer>
+    </body>
+</html>
