@@ -171,7 +171,6 @@ const showSkillHoverEffects = function (e) {
     // Dispay corresponding skill when a skill card is hovered.
     if (!e.target.classList.contains("skill-card")) return;
     clearTimeout(skillHideTimeout);
-    console.log(`OOO`);
 
     // Get skill text from the classname and replace underscore with space.
     const skillTextRaw = e.target.classList[1].split("--")[1];
